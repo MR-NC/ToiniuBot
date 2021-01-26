@@ -1,5 +1,5 @@
 {
-  "name": "toiniubot",
+  "name": "APBOT",
   "version": "0.0.2",
   "description": "Only termux",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "whatsapp",
     "bot"
   ],
-  "author": "Toin",
+  "author": "AGUSZ PAKEZ",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
@@ -40,10 +40,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ToinNetuh/ToiniuBot.git"
+    "url": "git+https://github.com/MR-NC/ToiniuBot.git"
   },
   "bugs": {
-    "url": "https://github.com/ToinNetuh/ToiniuBot.git"
+    "url": "https://github.com/MR-NC/ToiniuBot.git"
   },
-  "homepage": "https://github.com/ToinNetuh/ToiniuBot#readme"
+  "homepage": "https://github.com/MR-NC/ToiniuBot#readme"
 }
