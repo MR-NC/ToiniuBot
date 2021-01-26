@@ -1086,15 +1086,15 @@ case 'timer':
 
                       case 'bugreport':
                      const bug = body.slice(5)
-                      if (pesan.length > 300) return client.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 300 letras', msgType.text, {quoted: mek})
+                      if (pesan.length > 300) return client.sendMessage(from, 'Textnya kebanyakan omm, máximal 300 huruf!!', msgType.text, {quoted: mek})
                         var nomor = mek.participant
-                       teks1 = `*[RELATÓRIO]*\nNúmero : @${nomor.split("@s.whatsapp.net")[0]}\nmensagem : ${pesan}`
+                       teks1 = `*[RELATED]*\nNomer : @${nomor.split("@s.whatsapp.net")[0]}\npesan : ${pesan}`
                       var options = {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
                     client.sendMessage(nomerOwner, options, text, {quoted: mek})
-                    reply('Problemas foram relatados ao proprietário do BOT, relatórios falsos não serão respondidos.')
+                    reply('pesan report ke Owner APBOT telah terkirim, pesan hoax/palsu gak di respon.')
                     break
                case 'apakah':
                client.updatePresence(from, Presence.composing) 
@@ -1127,27 +1127,27 @@ case 'timer':
                hasil = `Pertanyaan : *${body.slice(1)}*\n\nJawaban : *${random2} ${random}*`
               reply(hasil)
                 break
-			case 'closegc':
+			case 'grouptutup':
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					var nomor = mek.participant
 					const close = {
-					text: `Grupo fechado pelo administrador @${nomor.split("@s.whatsapp.net")[0]}\nagora *apenas administradores* podem enviar mensagens`,
+					text: `[BERHASIL] menutup group dengan admin @${nomor.split("@s.whatsapp.net")[0]}\nagora *apenas administradores* podem enviar mensagens`,
 					contextInfo: { mentionedJid: [nomor] }
 					}
 					client.groupSettingChange (from, GroupSettingChange.messageSend, true);
 					reply(close)
 					break
                 case 'opengc':
-                case 'bukagc':
+                case 'groupbuka':
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					open = {
-					text: `Grupo aberto pelo administrador @${sender.split("@")[0]}\nagora *todos os participantes* podem enviar mensagens`,
+					text: `[BERHASIL] membuka group dengan admin @${sender.split("@")[0]}\nagora *todos os participantes* podem enviar mensagens`,
 					contextInfo: { mentionedJid: [sender] }
 					}
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
@@ -1195,7 +1195,7 @@ case 'timer':
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ Falhou, no momento da conversão ${tipe} para o sticker`)
+								reply(`❌ Yah gagal omm ${tipe}`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -1227,14 +1227,14 @@ case 'timer':
 				case 'toimg':
 				    client.updatePresence(from, Presence.composing)
                                     if (!isUser) return reply(mess.only.daftarB)
-					if (!isQuotedSticker) return reply('❌ Apenas Stickers ❌')
+					if (!isQuotedSticker) return reply('Kirim gambar')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
 					ran = getRandom('.png')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
-						if (err) return reply('❌ Falha ao converter Stickers em imagens ❌')
+						if (err) return reply('❌ gagal omm ❌')
 						buffer = fs.readFileSync(ran)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
 						fs.unlinkSync(ran)
@@ -1243,14 +1243,14 @@ case 'timer':
                 	case 'tomp3':
                 	client.updatePresence(from, Presence.composing) 
                         if (!isUser) return reply(mess.only.daftarB)
-					if (!isQuotedVideo) return reply('❌ responder vídeo hum ❌')
+					if (!isQuotedVideo) return reply('video yang mau di converter ke audio mana omm')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
 					ran = getRandom('.mp4')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
-						if (err) return reply('❌ Falha ao converter vídeo para mp3 ❌')
+						if (err) return reply('❌ yah gagal')
 						buffer = fs.readFileSync(ran)
 						client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', quoted: mek})
 						fs.unlinkSync(ran)
@@ -1258,7 +1258,7 @@ case 'timer':
 					break
 
                 case 'ninjalogo':
-                      if (args.length < 1) return reply('Cadê o texto?')
+                      if (args.length < 1) return reply('Textnya mana pak?')
                       if (!isUser) return reply(mess.only.daftarB)
                       gh = body.slice(11)
                       gl1 = gh.split("|")[0];
@@ -1274,7 +1274,7 @@ case 'timer':
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*Canção encontrada!!!*\nJudul : ${anu.result.title}\nFonte : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*ESPERE ENVIANDO POR FAVOR, NÃO SPAM YA PAI*`
+                 infomp3 = `*Lagu yang di temukan APBOT!!!*\nJudul : ${anu.result.title}\nLink : ${anu.result.source}\nUkuran : ${anu.result.size}\n\n*AUDIO SEDANG DI KIRIM, JANGAN SPAM YAH OMM*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -1285,7 +1285,7 @@ case 'timer':
                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
                    if (!isUser) return reply(mess.only.daftarB)
                    if (anu.error) return reply(anu.error)
-                   hasil = ` *O lugar : ${anu.tempat}\nClima : ${anu.cuaca}\nVento : ${anu.angin}\nTemperatura : ${anu.suhu}\nUmidade : ${anu.kelembapan}`
+                   hasil = ` *Tempat : ${anu.tempat}\nCuaca : ${anu.cuaca}\nAngin : ${anu.angin}\nSuhu : ${anu.suhu}\nkelembapan : ${anu.kelembapan}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
                               case 'game':
@@ -1309,14 +1309,14 @@ case 'timer':
 					break
                                   case 'daftar':
 					client.updatePresence(from, Presence.composing)
-					if (isUser) return reply('você já está registrado')
-					if (args.length < 1) return reply(`Parâmetro incorreto \nCommand : ${prefix}daftar nome|idade\nContoh : ${prefix}daftar Toin|18`)
+					if (isUser) return reply('KAMU KAN UDAH REGISTRASI SIH BEB🤧🤧')
+					if (args.length < 1) return reply(`REGISTRASI DULU YA OMM\nDENGAN CARA DI BAWAH INI!!! \nCommand : ${prefix}daftar nama|umur\ncontoh\nketik : ${prefix}daftar AGUSZ|20`)
 					var reg = body.slice(8)
 					var jeneng = reg.split("|")[0];
 					var umure = reg.split("|")[1];
 						user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`O registro foi bem sucedido com SN: TM08GK8PPHBSJDH10J\`\`\`\n\n\`\`\`Pada ${date} ${time}\`\`\`\n\`\`\`[Nama]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`[Era]: ${umure}\`\`\`\n\`\`\`Para usar o bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`ALREADY REGISTRASI APBOT\`\`\`\n\n\`\`\`PADA ${date} ${time}\`\`\`\n\`\`\`[NAMA]: ${jeneng}\`\`\`\n\`\`\`[NOMOR]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`[UMUR]: ${umure}\`\`\`\n\`\`\`Selamat anda udah daftar\`\`\`\n\`\`\`\`\`\`\n\`\`\`ketik ${prefix}help untuk mendapatkan fitur APBOT\`\`\`\n\`\`\`\nTotal Yang bergabung APBOT ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -1327,13 +1327,13 @@ case 'timer':
 						if (isWelkom) return reply('o recurso está ativo')
 						welkom.push(from)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
-						reply('❬ SUCESSO ❭ ativado o recurso de boas-vindas neste grupo')
+						reply('❬ SUCESSO ❭ mengaktifkan fitur welcome/leave')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, disable)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
-						reply('❬ SUCESSO ❭ desativado o recurso de boas-vindas neste grupo')
+						reply('❬ SUKSES ❭ menonaktifkan fitur welcome/leave')
 					} else {
-						reply('digite 1 para ativar, 0 para desativar o recurso')
+						reply('ketik 1 untuk mengaktifkan, 0 untuk menonaktifkan')
 					}
                                         break
                                 case 'fakta':
@@ -1347,7 +1347,7 @@ case 'timer':
 					if (args.length < 1) return reply(mess.blank)
                                         if (!isUser) return reply(mess.only.daftarB)
 					tels = body.slice(7)
-					if (tels.length > 15) return reply('O texto é muito longo, até 20 caracteres')
+					if (tels.length > 15) return reply('textnya kebanyakan omm...max 20 karakter!!')
 					reply(mess.wait)
 					anu = await fetchJson(`https://kocakz.herokuapp.com/api/flamingtext/water?text=${tels}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
@@ -1357,7 +1357,7 @@ case 'timer':
 					if (args.length < 1) return reply(mess.blank)
                                         if (!isUser) return reply(mess.only.daftarB)
 					tels = body.slice(7)
-					if (tels.ength > 10) return reply('O texto é longo, até 9 caracteres')
+					if (tels.ength > 10) return reply('textnya kebanyakan omm..max 9 karakter')
 					reply(mess.wait)
 					anu = await fetchJson(`https://zeksapi.herokuapp.com/api/tlight?text=${tels}&apikey=vinzapi`, {method: 'get'})
 					buff = await getBuffer(anu.result)
@@ -1375,14 +1375,14 @@ case 'timer':
 					cantik = body.slice(1)
 					const can =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
 					const tik = can[Math.floor(Math.random() * can.length)]
-					client.sendMessage(from, 'Questão : *'+cantik+'*\n\nResponda : '+ tik+'%', text, { quoted: mek })
+					client.sendMessage(from, 'kecantikan : *'+cantik+'*\n\nRespon : '+ tik+'%', text, { quoted: mek })
 					break
 				case 'watak':
 				if (isUser) return reply(mess.only.daftarB)
 					watak = body.slice(1)
 					const wa =['peny ayang','pem urah','Pem arah','Pem aaf','Pen urut','Ba ik','bap eran','Baik Hati','peny abar','Uw u','top deh, poko knya','Suka Memb antu']
 					const tak = wa[Math.floor(Math.random() * wa.length)]
-					client.sendMessage(from, 'Questão : *'+watak+'*\n\nResponda : '+ tak, text, { quoted: mek })
+					client.sendMessage(from, 'ketampanan : *'+watak+'*\n\nRespond : '+ tak, text, { quoted: mek })
 				    break
 				case 'hobby':
 				if (isUser) return reply(mess.only.daftarB)
@@ -1393,7 +1393,7 @@ case 'timer':
 					break
                                 case 'nsfwneko':
 				    try{
-						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+						if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
 						buffer = await getBuffer(res.result)
@@ -1418,7 +1418,7 @@ case 'timer':
 					var gh = body.slice(11)
 					var teks1 = gh.split("|")[0];
 					var teks2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`onde está o texto? exemplo ${prefix}logowolf Toin|BOT`)
+					if (args.length < 1) return reply(`textnya mana kak?`)
 					reply(mess.wait)
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=wolflogo1&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
@@ -1432,13 +1432,13 @@ case 'timer':
 						if (isNsfw) return reply('o recurso está ativo')
 						nsfw.push(from)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ SUCESSO ❭ ativado o recurso nsfw neste grupo')
+						reply('❬ SUKSES ❭ Mengaktifkan fitur NSFW di group ini')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ SUCESSO ❭ desativado o recurso nsfw neste grupo')
+						reply('❬ SUKSES ❭ Menonaktifkan fitur di grup ini')
 					} else {
-						reply('digite 1 para ativar, 0 para desativar o recurso')
+						reply('ketik 1 untuk mengaktifkan, 0 untuk menonaktifkan')
 					}
 					break	
 				case 'bucin':
@@ -1487,7 +1487,7 @@ case 'timer':
 					var gh = body.slice(11)
 					var teks1 = gh.split("|")[0];
 					var teks2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`onde está o texto? exemplo ${prefix}logowolf Toin|BOT`)
+					if (args.length < 1) return reply(`mana textnya omm??`)
                                         if (!isUser) return reply(mess.only.daftarB)
 					reply(mess.wait)
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=wolflogo2&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
@@ -1505,7 +1505,7 @@ case 'timer':
 					var gh = body.slice(7)
 					var gbl1 = gh.split("|")[0];
 					var gbl2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`Cadê o texto, hum\nExemplo: ${prefix}phlogo |Toin|BOT`)
+					if (args.length < 1) return reply(`mana textnya omm?`)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/textpro?theme=pornhub&text1=${gbl1}&text2=${gbl2}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
@@ -1530,7 +1530,7 @@ case 'timer':
                 const userXp = getLevelingXp(sender)
                 if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `◪ *LEVEL*\n  ├─ ❏ *Nome* : ${sem}\n  ├─ ❏ *User XP* : ${userXp}\n  └─ ❏ *User Level* : ${userLevel}`
+                resul = `◪ *LEVEL*\n  ├─ ❏ *Nama* : ${sem}\n  ├─ ❏ *User XP* : ${userXp}\n  └─ ❏ *User Level* : ${userLevel}`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
@@ -1572,7 +1572,7 @@ case 'timer':
                                         break
                                 case 'nsfwtrap':
                                         try{
-                                                if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+                                                if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
                                                 res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
                                                 buffer = await getBuffer(res.result)
@@ -1582,9 +1582,9 @@ case 'timer':
                                                 reply('❌ *ERROR* ❌')
                                         }
 										break
-										case 'randomhentaio': 
+										case 'randomhentai': 
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'hentai teros'})
@@ -1595,7 +1595,7 @@ case 'timer':
 						break
 					case 'nsfwloli':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
@@ -1606,7 +1606,7 @@ case 'timer':
 						break
 					case 'nsfwbobs': 
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tai os peitos que vc queria\npunhetero de merda'})
@@ -1617,7 +1617,7 @@ case 'timer':
 						break
 					case 'nsfwblowjob':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
@@ -1628,7 +1628,7 @@ case 'timer':
 						break
 					case 'nsfwneko':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://api.computerfreaker.cf/v1/neko`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni anjim'})
@@ -1639,7 +1639,7 @@ case 'timer':
 						break
 					case 'trap':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://api.computerfreaker.cf/v1/trap`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni anjim'})
@@ -1650,7 +1650,7 @@ case 'timer':
 					break
 				case 'nsfwass':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`'https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tai a bunda que vc queria'})
@@ -1661,7 +1661,7 @@ case 'timer':
 						break
 					case 'nsfwsidebobs':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/sideoppai`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'aaaah'})
@@ -1672,7 +1672,7 @@ case 'timer':
 					    break
 					case 'nsfwahegao':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ahegao`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'fodar'})
@@ -1683,7 +1683,7 @@ case 'timer':
 						break
 					case 'nsfwthighs':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'aaah q bosta'})
@@ -1694,7 +1694,7 @@ case 'timer':
 						break
 					case 'nsfwfeets':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tai mais fia sapoha no cu'})
@@ -1705,7 +1705,7 @@ case 'timer':
 						break
 					case 'nsfwarmpits':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animearmpits`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tai'})
@@ -1716,8 +1716,8 @@ case 'timer':
 						break
 						case 'nsfwtoin':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
+							if (!isNsfw) return reply('❌ *NSFW TIDAK AKTIF* ❌')
+							res = await fetchJson(`https://tobz-app.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tai os peitos que vc queria\npunhetero de merda'})
 						} catch (e) {
