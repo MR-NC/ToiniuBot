@@ -1,19 +1,19 @@
 const help = (prefix) => {
 	return `
-「 *Toin BOT* 」
+「 *APBOT* 」
 
 ◪ *informações*
   ❏ Prefix: 「  ${prefix}  」
-  ❏ Criador : Toin
-  ❏ Como instalar o BOT: https://www.youtube.com/watch?v=4cjhlXo9aGo
+  ❏ Creator : AGUSZ PAKEZ
+  ❏ YOUTUBE: https://youtube.com/channel/UCKP-E8RwFkJKhe-9uz0s9RQ
 
-◪ *SOBRE*
+◪ *TENTANG BOT*
   │
   ├─ ❏ ${prefix}info
   ├─ ❏ ${prefix}blocklist
   ├─ ❏ ${prefix}chatlist
   ├─ ❏ ${prefix}ping
-  └─ ❏ ${prefix}bugreport
+  └─ ❏ ${prefix}bug
 ◪ *FAZER*
   │
   ├─ ❏ ${prefix}sticker
@@ -81,11 +81,11 @@ const help = (prefix) => {
   │
   ├─ ❏ ${prefix}meme
   └─ ❏ ${prefix}memeindo
-◪ *SOM*
+◪ *AUDIO*
   │
   ├─ ❏ ${prefix}play
   └─ ❏ ${prefix}tts
-◪ *MÚSICA*
+◪ *MÚSIC*
   │
   ├─ ❏ ${prefix}lirik
   └─ ❏ ${prefix}chord
@@ -107,7 +107,7 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}husbu2
   ├─ ❏ ${prefix}wait
   └─ ❏ ${prefix}nekonime
-◪ *DIVERSÃO*
+◪ *SOSIAL*
   │
   ├─ ❏ ${prefix}alay
   ├─ ❏ ${prefix}gantengcek
@@ -118,7 +118,7 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}trust
   ├─ ❏ ${prefix}dare
   └─ ❏ ${prefix}simi
-◪ *INFORMAÇÃO*
+◪ *INFORMASI*
   │
   ├─ ❏ ${prefix}bahasa
   ├─ ❏ ${prefix}kodenegara
@@ -128,7 +128,7 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}infogempa
   ├─ ❏ ${prefix}jadwaltvnow
   └─ ❏ ${prefix}covid
-◪ *DONO*
+◪ *OWNER*
   │
   ├─ ❏ ${prefix}setprefix
   ├─ ❏ ${prefix}block
