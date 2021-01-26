@@ -1,8 +1,8 @@
-### Oiin sou o Toin
+### BOTE TERVERIFIKASI
 
 
+HAIII I'M APBOT
 
-<summary>🍙 Ajuda!</summary>
 
 ## Ferramentas
 
@@ -30,7 +30,7 @@ Siga os passos abaixo!
 > pkg install wget
 > pkg install nodejs
 > pkg install npm
-> git clone https://github.com/ToinNetuh/ToiniuBot.git
+> git clone https://github.com/MR-NC/ToiniuBot.git
 > cd ToiniuBot
 > bash install.sh
 ```
