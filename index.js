@@ -1731,12 +1731,12 @@ case 'timer':
                                         const latensi = speed() - timestamp
                                         client.updatePresence(from, Presence.composing) 
 				        uptime = process.uptime()
-                                        client.sendMessage(from, `Speed: *${latensi.toFixed(4)} _Second_*\nDevice: *Black Shark 3*\nRAM: *8/128*\nData: *Smartfren*\nJaringan: *4G*\nStatus: *Di Charger*`, text, { quoted: mek})
+                                        client.sendMessage(from, `Speed: *${latensi.toFixed(4)} _Second_*\nDevice: *Oppo a3s*\nRAM: *2/128*\nData: *three*\nJaringan: *4G*\nStatus: *Di Charger*`, text, { quoted: mek})
                                         break
                                 case 'neonlogo':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}neonlogo ToinBOT`)
+                                        if (args.length < 1) return reply(`texnya mana kak`)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=neon_light&text=${teks1}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -1745,7 +1745,7 @@ case 'timer':
                                 case 'neonlogo2':
                                         var gh = body.slice(10)
                                         teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}neonlogo2 ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=neon_technology&text=${text1}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -1755,7 +1755,7 @@ case 'timer':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply(`teksnya mana um\nContoh: ${prefix}lionlogo Toin|BOT`)
+                                        if (args.length < 1) return reply(`teksnya mana um?`)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=lionlogo&text1=${text1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -1770,7 +1770,7 @@ case 'timer':
                                 case 'jokerlogo':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto um \nExemplo: ${prefix}jokerlogo ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana pak?`)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=jokerlogo&text=${teks1}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -1796,7 +1796,7 @@ case 'timer':
                                 case 'shadow':
                                         var gh = body.slice(7)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}shadow ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=shadow&text=${text1}&apikey=BotWeA`, {method: 'get'})
@@ -1806,7 +1806,7 @@ case 'timer':
                                 case 'burnpaper':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}burnpaper ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=burn_paper&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1816,7 +1816,7 @@ case 'timer':
                                 case 'coffee':
                                         var gh = body.slice(7)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}coffee ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=coffee&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1826,7 +1826,7 @@ case 'timer':
                                 case 'lovepaper':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}lovepaper ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=love_paper&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1836,7 +1836,7 @@ case 'timer':
                                 case 'woodblock':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}woodblock ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=wood_block&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1846,7 +1846,7 @@ case 'timer':
                                 case 'qowheart':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}qowheart ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=quote_on_wood_heart&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1856,7 +1856,7 @@ case 'timer':
                                 case 'mutgrass':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}mutgrass ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana omm??`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=message_under_the_grass&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1866,7 +1866,7 @@ case 'timer':
                                 case 'undergocean':
                                         var gh = body.slice(12)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}undergocean ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=underwater_ocean&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1876,7 +1876,7 @@ case 'timer':
                                 case 'woodenboards':
                                         var gh = body.slice(13)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}woodenboards ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=wooden_boards&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1886,7 +1886,7 @@ case 'timer':
                                 case 'wolfmetal':
                                         var gh = body.slice(10)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}wolfmetal ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=wolf_metal&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1896,7 +1896,7 @@ case 'timer':
                                 case 'metalictglow':
                                         var gh = body.slice(14)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}metalictglow ToinBOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=metalic_text_glow&text=${teks1}&apikey=BotWeA`, {method: 'get'})
@@ -1907,7 +1907,7 @@ case 'timer':
                                         var gh = body.slice(5)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}8bit Toin|BOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak?`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=bit8&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
@@ -1962,7 +1962,7 @@ case 'timer':
 					reply('Pronto Senor')
 					break
 				case 'simi':
-					if (args.length < 1) return reply('Onde está o texto?')
+					if (args.length < 1) return reply('1/0?')
 					teks = body.slice(5)
 					anu = await simih(teks) //fetchJson(`https://mhankbarbars.herokuapp.com/api/samisami?text=${teks}`, {method: 'get'})
 					//if (anu.error) return reply('Simi ga tau kak')
@@ -1976,11 +1976,11 @@ case 'timer':
 						if (isSimi) return reply('O modo Simi está ativado')
 						samih.push(from)
 						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('Ativado com sucesso o modo simi neste grupo ✔️')
+						reply('[SUKSES] mengaktifkan fitur simi di grup ini✔️')
 					} else if (Number(args[0]) === 0) {
 						samih.splice(from, 1)
 						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('Desativando o modo simi com sucesso neste grupo ✔️')
+						reply('[SUKSES] menonaktifkan fitur simi di grup ini ✔️')
 					} else {
 						reply('1 para ativar, 0 para desativar')
 					}
@@ -2006,7 +2006,7 @@ case 'timer':
                                         var teks7 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
                                         var teks3 = gh.split("|")[2];
-                                        if (args.length < 1) return reply('teks, nama, kelas nya mana kak?\nContoh: ${prefix}magernulis teks|nama|kelas\nContoh pemakaian: ${prefix}magernulis NazwaCanss|Nazwa|10C')
+                                        if (args.length < 1) return reply('teks, nama,mana kak?')
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`http://api-melodicxt.herokuapp.com/api/joki-nulis?text=${teks7}&nama=${teks2}&kelas=${teks3}&apiKey=administrator`, {method: 'get'})
                                         buffer = await getBuffer(anu.result.result)
@@ -2016,7 +2016,7 @@ case 'timer':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}pubglogo Toin|BOT`)
+                                        if (args.length < 1) return reply(`textnya mana kak`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -2025,7 +2025,7 @@ case 'timer':
                                 case 'herrypotter':
                                 case 'harrypotter':
                                         var gh = body.slice(12)
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}harrypotter ToinBOT`)
+                                        if (args.length < 1) return reply(`Textnya mana umm`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=harry_potter&text=${gh}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -2043,7 +2043,7 @@ case 'timer':
 							reply(err)
 		      				})
 					} else {
-						reply('Mi mama senor?')
+						reply('mau kemana kak?')
 					}
 					break
 				default:
