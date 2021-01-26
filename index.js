@@ -78,9 +78,9 @@ const { othermenu } require('./database/menu/othermenu')*/
 /******LOAD OF VCARD INPUT******/
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
-            + 'FN:Toin🖤\n' // full name
+            + 'FN:AGUSZ PAKEZ Admin\n' // full name
             + 'ORG:Owner Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=556296638900:+55 (62) 9663-8900\n' // ID do WhatsApp + número de telefone
+            + 'TEL;type=CELL;type=VOICE;waid=6289694354384:+62 896-9435-4384\n' // ID do WhatsApp + número de telefone
             + 'END:VCARD'
 /******END OF VCARD INPUT******/
 
@@ -246,23 +246,23 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛ Calmaer opoha to fazendo ⌛',
-				success: '✔️ Sucesso ✔️',
-                                levelon: '❬ ✔ ❭ *habilitar Level*',
-				leveloff: ' ❬ X ❭  *desabilitar Level*',
-				levelnoton: '❬ X ❭ *level não ativo*',
-				levelnol: '*Pqp kskst level* 0 ',
+				wait: '⌛ [WAIT] *SABAR TOD,.... orang sabar di sayang janda 🤭🤭*',
+				success: '✔️ Sucess ✔️',
+                                levelon: '❬ ✔ ❭ *apbote Level*',
+				leveloff: ' ❬ X ❭  *off Level*',
+				levelnoton: '❬ X ❭ *level aktif*',
+				levelnol: '*level* 0 ',
 				error: {
-					stick: '[❗] Falha, ocorreu um erro ao converter a imagem em um adesivo ❌',
-					Iv: '❌ Link inválido ❌'
+					stick: '[❗] Yah gagal ;(, coba ulangi ^_^ ',
+					Iv: '❌ 𝗠𝗮𝗮𝗳 𝗹𝗶𝗻𝗸 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱☹️'
 				},
 				only: {
-					group: '[❗] Este comando só pode ser usado em grupos! ❌',
-					ownerG: '[❗] Este comando só pode ser usado pelo grupo proprietário! ❌',
-					ownerB: '[❗] Este comando só pode ser usado pelo Toin! ❌',
-					admin: '[❗] Este comando só pode ser usado por administradores de grupo! ❌',
-					Badmin: '[❗] Este comando só pode ser usado quando o bot se torna administrador! ❌',
-                                        daftarB: `── 「REGISTRE-SE」 ──\nOlá como!\nVocê não está registrado no banco de dados, \n\nComando : ${prefix}daftar nome|idade\nExemplo : ${prefix}daftar Toin|18`,
+					group: '[❗] GROUP ONLY',
+					ownerG: '[❗] OWNER GROUP ONLY',
+					ownerB: '[❗] OWNER ONLY',
+					admin: '[❗] ADMIN ONLY',
+					Badmin: '[❗] BOT HARUS JADI ADMIN! ❌',
+                                        daftarB: `── 「REGISTERED APBOT」 ──\nREGISTRASI DULU YA OMM!\nDengan cara di bawah ini, \n\nCommand : ${prefix}daftar nama|umur\nContoh\nketik : ${prefix}daftar AGUSZ|20`,
 				}
 			}
     			const apakah = ['Ya','Tidak']
